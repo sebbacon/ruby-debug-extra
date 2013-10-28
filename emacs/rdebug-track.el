@@ -212,8 +212,8 @@ problem as best as we can determine."
       "line number cue not found"
     ;;else
     (let* ((filename (match-string rdebug-marker-regexp-file-group block-str))
-           (lineno (string-to-number
-		    (match-string rdebug-marker-regexp-line-group block-str)))
+           (lineno (- (string-to-number
+                    (match-string rdebug-marker-regexp-line-group block-str)) 1))
            funcbuffer)
 
       (cond ((file-exists-p filename)
