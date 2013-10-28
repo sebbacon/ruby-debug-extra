@@ -76,7 +76,7 @@ as gud-mode does for debugging C programs with gdb."
   "^(\\([-a-zA-Z0-9_/.]*\\):\\([0-9]+\\)):[ \t]?\\(.*\n\\)"
   "Regular expression rdebug-track uses to find a stack trace entry.")
 
-(defconst rdebug-track-track-range 10000
+(defconst rdebug-track-track-range 1000
   "Max number of characters from end of buffer to search for stack entry.")
 
 
