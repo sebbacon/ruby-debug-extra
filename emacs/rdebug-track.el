@@ -142,7 +142,7 @@ at the beginning of the line."
           (rdebug-track-overlay-arrow nil)
         ;;else
         (let* ((procmark (process-mark currproc))
-               (block-start (max comint-last-input-end
+               (block-start (max 1
                                  (- procmark rdebug-track-track-range)))
                (block-str (buffer-substring-no-properties block-start procmark))
                target target_fname target_lineno target_buffer)
