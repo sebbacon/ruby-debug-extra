@@ -55,21 +55,21 @@ Program-location lines look like this:
 ;; ^Z^Zsource foo.rb:10\n
 
 (defconst rdebug-annotation-start-regexp
-  "\\(\\([a-z][-a-z]*\\)?\n\\|source \\)"
+  "^\\(\\([a-z][-a-z]*\\)?\n\\|source \\)"
   "Regular expression to match the start of an annotation.")
 
 (defconst rdebug-breakpoint-regexp
   "^\\ +\\([0-9]+\\) \\([yn]\\) +at +\\(.+\\):\\([0-9]+\\)\\( if .*\\)?$"
   "Regexp to recognize breakpoint lines in rdebug breakpoint buffers.")
 
-(defconst rdebug-marker-regexp-file-group 2
+(defconst rdebug-marker-regexp-file-group 1
   "Group position in `rdebug-position-regexp' that matches the file name.")
 
-(defconst rdebug-marker-regexp-line-group 3
+(defconst rdebug-marker-regexp-line-group 2
   "Group position in `rdebug-position-regexp' that matches the line number.")
 
 (defconst rdebug-position-regexp
-  "\\(\\)\\([-a-zA-Z0-9_/.]*\\):\\([0-9]+\\)"
+  "^\\([-a-zA-Z0-9_/.]+\\):\\([0-9]+\\)"
   "Regular expression for a rdebug position.")
 
 (defconst rdebug-traceback-line-re
