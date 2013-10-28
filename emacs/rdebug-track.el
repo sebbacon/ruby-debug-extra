@@ -144,7 +144,7 @@ at the beginning of the line."
         (let* ((procmark (process-mark currproc))
                (block-start (max comint-last-input-end
                                  (- procmark rdebug-track-track-range)))
-               (block-str (buffer-substring block-start procmark))
+               (block-str (buffer-substring-no-properties block-start procmark))
                target target_fname target_lineno target_buffer)
 
           (if (not (string-match rdebug-input-prompt-regexp block-str))
